@@ -1,0 +1,649 @@
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/NotoSerifCJKjp-Regular.otf) format("opentype"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-self;
+  font-size: 14px;
+  background: #000000;
+  color: #ffffff; }
+
+body {
+  font-family: 'Roboto', sans-self;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  color: #ffffff; }
+  body .app {
+    width: 100%;
+    height: 100%; }
+    body .app .app-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      background: #000; }
+      body .app .app-container header {
+        width: 100%;
+        height: 50px;
+        background: #222;
+        border-bottom: 2px solid #111;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        -webkit-user-select: none;
+        -webkit-app-region: drag; }
+        body .app .app-container header .header-title {
+          font-family: 'Orbitron', 'Roboto', sans-serif;
+          letter-spacing: 4px;
+          font-size: 1.2rem;
+          color: #fff;
+          margin-left: 20px;
+          margin-top: 6px; }
+        body .app .app-container header .status-line {
+          width: 240px;
+          height: 30px;
+          border-radius: 10px;
+          background: #000;
+          color: #fff;
+          text-align: center;
+          padding-top: 6px;
+          padding-right: 10px;
+          margin-right: 10px; }
+          body .app .app-container header .status-line .session-state {
+            font-size: 0.85rem;
+            font-family: 'Orbitron', 'Roboto', sans-serif;
+            letter-spacing: 2px; }
+          body .app .app-container header .status-line .session-state-online {
+            color: #0ff; }
+          body .app .app-container header .status-line .session-state-offline {
+            color: #f00; }
+          body .app .app-container header .status-line .session-nickname {
+            margin-left: 6px; }
+      body .app .app-container .main {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center; }
+        body .app .app-container .main .background {
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden; }
+        body .app .app-container .main .login-panel {
+          z-index: 10;
+          width: 260px;
+          background: rgba(0, 0, 0, 0.8);
+          margin: auto;
+          text-align: center;
+          border-radius: 20px;
+          padding: 20px;
+          box-shadow: 3px 5px 5px 3px rgba(0, 0, 0, 0.2); }
+          body .app .app-container .main .login-panel label {
+            display: inline-block;
+            line-height: 0.9rem; }
+          body .app .app-container .main .login-panel .login-input {
+            width: 220px;
+            margin: 10px auto 20px auto;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #000;
+            height: 26px;
+            outline: 0;
+            box-shadow: inset 1px 8px 10px -6px rgba(0, 0, 0, 0.5);
+            padding-left: 10px;
+            border: 1px solid #999; }
+          body .app .app-container .main .login-panel .login-input:focus {
+            outline: 0;
+            border: 2px solid #ff8c00; }
+          body .app .app-container .main .login-panel .login-button {
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            border-width: 0;
+            width: 220px;
+            padding: 8px;
+            padding-top: 12px;
+            color: #fff;
+            margin-bottom: 5px;
+            background-color: #066;
+            box-shadow: 0px 0px 5px 3px #066;
+            font-family: 'Orbitron', 'Roboto', sans-serif;
+            letter-spacing: 6px; }
+          body .app .app-container .main .login-panel .login-button:hover {
+            background-color: #00dddd;
+            box-shadow: 0px 0px 5px 3px #0ff; }
+        body .app .app-container .main .content-panel {
+          z-index: 10;
+          width: 100%;
+          height: 100%;
+          flex: 1 1 auto;
+          display: flex;
+          flex-flow: column; }
+          body .app .app-container .main .content-panel .live-pane {
+            width: 100%;
+            height: 0px;
+            background: rgba(0, 0, 0, 0.4); }
+            body .app .app-container .main .content-panel .live-pane .live-streams {
+              width: 100%;
+              height: 260px;
+              background: rgba(0, 0, 0, 0.5); }
+              body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line {
+                background: #fff;
+                width: 100%;
+                height: 40px;
+                background-color: #000;
+                border-bottom: 2px solid #002244;
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 10px;
+                padding-right: 10px; }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header {
+                  width: 200px;
+                  height: 100%;
+                  padding-top: 9px;
+                  margin-left: 10px; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header .live-status-text-top {
+                    height: 100%;
+                    color: #0ff;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding-top: 14px;
+                    font-family: 'Orbitron', 'Roboto', sans-serif;
+                    letter-spacing: 4px; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header .channel-name {
+                    margin-left: 10px;
+                    color: #fff;
+                    height: 20px;
+                    font-size: 1.2rem; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header .channel-name-room::before {
+                    content: "# "; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header .channel-name-system::before {
+                    content: "- "; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-line-header .channel-name-direct::before {
+                    content: "@ "; }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-text {
+                  width: 200px;
+                  height: 100%;
+                  color: #fff;
+                  text-align: center;
+                  vertical-align: middle;
+                  padding-top: 14px;
+                  font-family: 'Orbitron', 'Roboto', sans-serif;
+                  letter-spacing: 4px; }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-command-buttons {
+                  width: 200px;
+                  height: 100%;
+                  padding: 8px;
+                  text-align: right;
+                  vertical-align: middle; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-command-buttons .channel-command-button {
+                    display: inline-block;
+                    width: 100px;
+                    height: 20px;
+                    font-size: 0.8rem;
+                    text-align: center;
+                    padding-top: 6px;
+                    border-radius: 5px;
+                    color: #fff;
+                    margin-left: 10px;
+                    background-color: #066;
+                    box-shadow: 0px 0px 5px 3px #066;
+                    font-family: 'Orbitron', 'Roboto', sans-serif;
+                    letter-spacing: 2px; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-command-buttons .channel-command-button-leave {
+                    background-color: #553300;
+                    box-shadow: 0px 0px 5px 3px #553300; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-status-line .live-status-command-buttons .channel-command-button-leave:hover {
+                    background-color: #f9e39f;
+                    box-shadow: 0px 0px 5px 3px #f4c842; }
+              body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list {
+                display: none;
+                width: 100%;
+                height: 220px;
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+                padding-left: 5px;
+                padding-right: 5px; }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item {
+                  display: inline-block;
+                  flex: 1 1 auto;
+                  max-width: 300px;
+                  /*width: 100px;*/
+                  height: 190px;
+                  padding: 5px;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  box-shadow: 0px 0px 5px 3px #00ffff; }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item .live-stream-display {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    background: #000; }
+                    body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item .live-stream-display video {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%; }
+                    body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item .live-stream-display .live-mine {
+                      transform: rotateY(180deg); }
+                  body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item .live-stream-display-soundonly {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    color: #999;
+                    font-size: 1.6rem;
+                    text-align: center;
+                    vertical-align: middle;
+                    /*background: linear-gradient(to bottom, #ffffff 0%, #dddddd 57%, #bbbbbb 98%);*/
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    align-items: center; }
+                    body .app .app-container .main .content-panel .live-pane .live-streams .live-stream-list .live-stream-list-item .live-stream-display-soundonly .soundonly-board-number {
+                      font-size: 4rem;
+                      width: 86px;
+                      border-bottom: 2px solid #999;
+                      padding-bottom: 6px;
+                      margin-bottom: 16px; }
+              body .app .app-container .main .content-panel .live-pane .live-streams .live-start-panel {
+                width: 260px;
+                height: 180px;
+                background: rgba(0, 0, 0, 0.6);
+                margin: 20px auto;
+                text-align: center;
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 3px 5px 5px 3px rgba(0, 0, 0, 0.2); }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-start-panel .live-start-button {
+                  display: inline-block;
+                  text-align: center;
+                  border-radius: 10px;
+                  width: 220px;
+                  padding: 0.6rem;
+                  padding-top: 0.7rem;
+                  color: #fff;
+                  margin-bottom: 20px;
+                  background-color: #006666;
+                  box-shadow: 0px 0px 5px 3px #006666;
+                  font-family: 'Orbitron', 'Roboto', sans-serif;
+                  letter-spacing: 4px; }
+                body .app .app-container .main .content-panel .live-pane .live-streams .live-start-panel .live-start-button:hover {
+                  background-color: #00dddd;
+                  box-shadow: 0px 0px 5px 3px #00ffff; }
+          body .app .app-container .main .content-panel .live-pane-active {
+            height: 260px; }
+          body .app .app-container .main .content-panel .pane-container {
+            flex: 1 1 auto;
+            height: 100%;
+            display: flex;
+            flex-flow: row; }
+            body .app .app-container .main .content-panel .pane-container .channel-list-pane {
+              width: 200px;
+              height: 100%;
+              background: #000;
+              color: #000;
+              border-right: 2px solid #000;
+              display: flex;
+              flex-flow: column; }
+              body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list-header {
+                width: 100%;
+                height: 30px;
+                background-color: #333;
+                border-top: 2px solid #444;
+                border-bottom: 2px solid #222; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list-header .channel-list-title {
+                  width: 100%;
+                  height: 100%;
+                  color: #fff;
+                  text-align: center;
+                  padding: 5px;
+                  padding-top: 8px;
+                  font-size: 0.9rem;
+                  font-family: 'Orbitron', 'Roboto', sans-serif;
+                  letter-spacing: 2px; }
+              body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list {
+                flex: 1 auto auto;
+                padding-top: 5px;
+                height: 100%;
+                overflow: auto; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-item {
+                  background: #442200;
+                  display: inline-block;
+                  box-sizing: border-box;
+                  width: 100%;
+                  height: 30px;
+                  color: #fff;
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  padding-top: 8px;
+                  font-size: 0.9rem;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  border-right: 4px solid #442200; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-item:hover {
+                  color: #fff;
+                  background-color: #a9934f;
+                  box-shadow: 0px 0px 5px 3px #b9a35f;
+                  border-right: 4px solid #a9934f; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-item-system::before {
+                  content: "- "; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-item-room::before {
+                  content: "# "; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-item-user::before {
+                  content: "@ "; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-selected {
+                  color: #fff;
+                  background-color: #d9c37f;
+                  box-shadow: 0px 0px 5px 3px #f4c842;
+                  border-right: 4px solid #d9c37f; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-list li .channel-list-unread {
+                  border-right: 4px solid #f44; }
+              body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-join-box {
+                min-height: 26px;
+                width: 100%;
+                height: 26px;
+                background: #000;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-join-box .channel-join-box-header {
+                  color: #ff8c00;
+                  width: 30px;
+                  height: 100%;
+                  padding: 0;
+                  padding-top: 5px;
+                  text-align: center;
+                  vertical-align: middle; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-join-box .channel-join-room-name {
+                  flex: 1 1 auto;
+                  width: 100%;
+                  height: 100%;
+                  background: #fff;
+                  border: 1px solid #000;
+                  outline: 0;
+                  box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+                  padding: 0;
+                  padding-left: 10px; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-join-box .channel-join-room-name::placeholder {
+                  color: #ccc; }
+                body .app .app-container .main .content-panel .pane-container .channel-list-pane .channel-join-box .channel-join-room-name:focus {
+                  outline: 0;
+                  border: 1px solid #ff8c00; }
+            body .app .app-container .main .content-panel .pane-container .channel-detail-pane {
+              flex: 1 1 auto;
+              height: 100%;
+              width: 100%;
+              display: flex;
+              flex-flow: column; }
+              body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container {
+                flex: 1 1 auto;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-flow: row; }
+                body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane {
+                  flex: 1 1 auto;
+                  height: 100%;
+                  display: flex;
+                  flex-flow: column;
+                  box-sizing: border-box; }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-conversation-header {
+                    width: 100%;
+                    height: 30px;
+                    background-color: #333;
+                    border-top: 2px solid #444;
+                    border-bottom: 2px solid #222; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-conversation-header .channel-conversation-title {
+                      width: 100%;
+                      height: 100%;
+                      color: #fff;
+                      text-align: center;
+                      padding: 5px;
+                      padding-top: 8px;
+                      font-size: 0.9rem;
+                      font-family: 'Orbitron', 'Roboto', sans-serif;
+                      letter-spacing: 2px; }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line {
+                    width: 100%;
+                    height: 50px;
+                    background-color: #000;
+                    border-bottom: 1px solid #122;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-name {
+                      width: 200px;
+                      color: #fff;
+                      height: 20px;
+                      font-size: 1.2rem; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-name-room::before {
+                      content: "# "; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-name-system::before {
+                      content: "- "; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-name-direct::before {
+                      content: "@ "; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons {
+                      flex: 1 1 auto;
+                      width: 100%;
+                      height: 20px;
+                      text-align: right; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons .channel-command-button {
+                        display: inline-block;
+                        width: 100px;
+                        height: 20px;
+                        font-size: 0.8rem;
+                        text-align: center;
+                        padding-top: 6px;
+                        border-radius: 5px;
+                        color: #fff;
+                        margin-left: 10px;
+                        background-color: #066;
+                        box-shadow: 0px 0px 5px 3px #066;
+                        font-family: 'Orbitron', 'Roboto', sans-serif;
+                        letter-spacing: 2px; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons .channel-command-button-live {
+                        background-color: #066;
+                        box-shadow: 0px 0px 5px 3px #066; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons .channel-command-button-live:hover {
+                        background-color: #00dddd;
+                        box-shadow: 0px 0px 5px 3px #0ff; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons .channel-command-button-leave {
+                        background-color: #553300;
+                        box-shadow: 0px 0px 5px 3px #553300; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-command-line .channel-command-buttons .channel-command-button-leave:hover {
+                        background-color: #f9e39f;
+                        box-shadow: 0px 0px 5px 3px #f4c842; }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history {
+                    flex: 1 1 auto;
+                    width: 100%;
+                    overflow: auto;
+                    background: rgba(0, 0, 0, 0.6);
+                    box-sizing: border-box;
+                    padding: 10px; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .reference {
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 10px;
+                      box-sizing: border-box;
+                      margin-top: 4px;
+                      background: rgba(0, 0, 0, 0.5);
+                      box-shadow: 3px 5px 5px 3px rgba(0, 0, 0, 0.2); }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .reference .reference-info {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 4px; }
+                        body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .reference .reference-info .reference-title {
+                          color: #fff; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .reference .reference-img {
+                        max-width: 100px;
+                        max-height: 100px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech {
+                      width: 100%;
+                      /*border-bottom: 1px solid #024;*/
+                      padding: 4px; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speech-info {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 4px; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speech-text {
+                        width: 100%;
+                        line-height: 1.5rem;
+                        margin-left: 4px;
+                        text-shadow: 1px 1px 3px #000; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speech-text-link {
+                        color: #066;
+                        line-height: 1.5rem;
+                        background: #000;
+                        padding: 2px 4px;
+                        border-radius: 2px;
+                        max-width: 400px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speech-text-link:hover {
+                        color: #0ff; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speaker {
+                        color: #cc8c00;
+                        font-size: 0.9rem;
+                        background: rgba(0, 0, 0, 0.5);
+                        border-radius: 10px;
+                        padding: 2px 6px; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speaker::before {
+                        content: "@"; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-history .speech .speech-date {
+                        color: #fff;
+                        font-size: 0.8rem;
+                        padding: 3px 6px;
+                        border-radius: 10px;
+                        background: rgba(0, 0, 0, 0.5); }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-speech-box {
+                    min-height: 26px;
+                    width: 100%;
+                    height: 26px;
+                    background: #000;
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0px; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-speech-box .channel-speech-box-header {
+                      color: #ff8c00;
+                      width: 30px;
+                      height: 100%;
+                      padding: 0;
+                      padding-top: 5px;
+                      text-align: center;
+                      vertical-align: middle; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-speech-box .channel-speech-box-input {
+                      flex: 1 1 auto;
+                      width: 100%;
+                      height: 100%;
+                      background: #fff;
+                      border: 1px solid #000;
+                      outline: 0;
+                      box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+                      padding: 0;
+                      padding-left: 10px; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-speech-box .channel-speech-box-input::placeholder {
+                      color: #ccc; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-conversation-pane .channel-speech-box .channel-speech-box-input:focus {
+                      outline: 0;
+                      border: 1px solid #ff8c00; }
+                body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane {
+                  width: 200px;
+                  height: 100%;
+                  display: flex;
+                  flex-flow: column;
+                  border-left: 2px solid #000;
+                  background: #000; }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-header {
+                    width: 100%;
+                    height: 30px;
+                    background-color: #333;
+                    border-top: 2px solid #444;
+                    border-bottom: 2px solid #222; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-header .channel-members-title {
+                      width: 100%;
+                      height: 100%;
+                      color: #fff;
+                      text-align: center;
+                      padding: 5px;
+                      padding-top: 8px;
+                      font-size: 0.9rem;
+                      font-family: 'Orbitron', 'Roboto', sans-serif;
+                      letter-spacing: 2px; }
+                  body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-list {
+                    flow: 1 1 auto;
+                    margin-top: 5px;
+                    background: #000;
+                    width: 100%;
+                    overflow: auto; }
+                    body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-list li {
+                      border-bottom: 1px solid #000; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-list li .channel-members-list-item {
+                        background: #012;
+                        box-sizing: border-box;
+                        margin: 0;
+                        display: inline-block;
+                        width: 100%;
+                        height: 20px;
+                        color: #fff;
+                        padding: 2px;
+                        padding-left: 10px;
+                        font-size: 0.9rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden; }
+                      body .app .app-container .main .content-panel .pane-container .channel-detail-pane .channel-conversation-and-members-container .channel-members-pane .channel-members-list li .channel-members-list-item:hover {
+                        color: #ff8c00;
+                        background: #000; }
+      body .app .app-container footer {
+        z-index: 10;
+        width: 100%;
+        height: 50px;
+        background: #222;
+        border-top: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
